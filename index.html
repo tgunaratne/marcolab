@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>MARCO LAB (PVT) LTD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="MARCO LAB (PVT) LTD is a Sri Lankan manufacturer and supplier of medical laboratory reagents, laboratory equipment, distilled water and highly purified water.">
+<meta name="theme-color" content="#0c1a33">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@85..110,500..800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+/* Mobile-first, app-style navigation (app bar + bottom tabs + menu sheet).
+   Editorial-corporate layout: full-bleed bands, hairline rules and open lists instead of boxed cards.
+   ≥760px: wider columns. ≥1200px: tab bar folds into a top navigation bar. */
+:root{
+  --bg:#ffffff; --mist:#f4f6f9; --ink:#0f1b2b; --muted:#5a6676; --line:#e2e7ee;
+  --accent:#3b43a8; --accent-soft:#eceefb; --accent-ink:#ffffff;
+  --navy:#0c1a33; --navy-fg:#f2f5fb; --navy-muted:#aab6cc; --navy-line:rgba(255,255,255,.14);
+  --pink:#d0457a; --scrim:rgba(8,14,28,.45);
+  --font-display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --font-body:"Source Sans 3","Segoe UI",Roboto,Arial,sans-serif;
+  --g:max(20px,env(safe-area-inset-left,0px)); --gr:max(20px,env(safe-area-inset-right,0px));
+  --bar:58px; --tab:64px;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0c121b; --mist:#111924; --ink:#e8edf3; --muted:#9eabba; --line:#233041;
+  --accent:#9aa2ff; --accent-soft:#1f2747; --accent-ink:#0c121b;
+  --navy:#0f1c36; --navy-fg:#eef2f9; --navy-muted:#9aa8c2; --navy-line:rgba(255,255,255,.12);
+  --pink:#f07aa6; --scrim:rgba(0,0,0,.6); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0c121b; --mist:#111924; --ink:#e8edf3; --muted:#9eabba; --line:#233041;
+  --accent:#9aa2ff; --accent-soft:#1f2747; --accent-ink:#0c121b;
+  --navy:#0f1c36; --navy-fg:#eef2f9; --navy-muted:#9aa8c2; --navy-line:rgba(255,255,255,.12);
+  --pink:#f07aa6; --scrim:rgba(0,0,0,.6); color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+img{max-width:100%}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;padding-bottom:calc(var(--tab) + env(safe-area-inset-bottom,0px))}
+body.sheet-open{overflow:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+h1,h2,h3{font-family:var(--font-display);line-height:1.12;margin:0;letter-spacing:-.02em;text-wrap:balance}
+p{margin:0}
+ul{list-style:none;margin:0;padding:0}
+a{color:var(--accent);text-decoration:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+@media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+.wrap{max-width:1180px;margin:0 auto;padding-left:var(--g);padding-right:var(--gr)}
+.ico{width:22px;height:22px;flex:none}
+
+/* ---------- App bar ---------- */
+.appbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.appbar .wrap{height:var(--bar);display:flex;align-items:center;gap:.5rem}
+.brand{display:flex;align-items:center;gap:.6rem;color:var(--ink);min-width:0;flex:none}
+.brand svg{width:32px;height:32px;flex:none}
+.brand-name{font-family:var(--font-display);font-weight:800;font-stretch:108%;font-size:1rem;letter-spacing:.06em;line-height:1;white-space:nowrap;display:block}
+.brand-sub{display:block;font-size:.6rem;letter-spacing:.22em;color:var(--muted);font-weight:700;margin-top:3px}
+.back{display:none;align-items:center;gap:.15rem;color:var(--ink);min-width:0}
+.back .ib{margin-left:-10px}
+.back span{font-family:var(--font-display);font-size:1.02rem;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+body.inner .appbar .brand{display:none}
+body.inner .appbar .back{display:flex}
+.acts{margin-left:auto;display:flex;gap:.15rem}
+.ib{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;color:var(--ink);background:none;border:0;cursor:pointer;flex:none}
+.ib svg{width:21px;height:21px}
+.acts .ib{color:var(--accent)}
+nav.top{display:none}
+
+/* ---------- Bottom tab bar ---------- */
+.tabbar{position:fixed;left:0;right:0;bottom:0;z-index:45;background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-top:1px solid var(--line);padding:0 env(safe-area-inset-right,0px) env(safe-area-inset-bottom,0px) env(safe-area-inset-left,0px)}
+.tabs{height:var(--tab);display:grid;grid-template-columns:repeat(5,1fr);max-width:560px;margin:0 auto}
+.tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--muted);font-size:.64rem;font-weight:600;line-height:1.15;text-align:center;padding:0 2px;background:none;border:0;font-family:inherit;cursor:pointer;position:relative}
+.tab svg{width:23px;height:23px}
+.tab[aria-current="page"]{color:var(--accent)}
+.tab[aria-current="page"]::before{content:"";position:absolute;top:-1px;left:32%;right:32%;height:2px;background:var(--accent)}
+
+/* ---------- Menu sheet ---------- */
+.scrim{position:fixed;inset:0;z-index:70;background:var(--scrim);opacity:0;pointer-events:none;transition:opacity .25s}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:71;background:var(--bg);border-radius:20px 20px 0 0;padding:.5rem var(--gr) calc(1rem + env(safe-area-inset-bottom,0px)) var(--g);transform:translateY(105%);visibility:hidden;transition:transform .3s cubic-bezier(.2,.8,.2,1),visibility 0s linear .3s;max-height:88vh;overflow-y:auto;max-width:640px;margin:0 auto}
+body.sheet-open .scrim{opacity:1;pointer-events:auto}
+body.sheet-open .sheet{transform:none;visibility:visible;transition-delay:0s}
+.handle{width:38px;height:4px;border-radius:2px;background:var(--line);margin:.3rem auto .6rem}
+.sheet-head{display:flex;align-items:center;justify-content:space-between;padding-bottom:.4rem}
+.sheet nav a{display:flex;align-items:center;min-height:54px;color:var(--ink);font-family:var(--font-display);font-weight:600;font-size:1.12rem;border-bottom:1px solid var(--line)}
+.sheet nav a .chev{margin-left:auto;width:18px;height:18px;color:var(--muted)}
+.sheet nav a[aria-current="page"]{color:var(--accent)}
+.sheet .two{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:1.1rem}
+
+/* ---------- Buttons & links ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;min-height:50px;padding:.75rem 1.25rem;border-radius:10px;font:700 1rem/1.2 var(--font-body);border:1px solid transparent;cursor:pointer;text-align:center;transition:transform .12s,filter .15s}
+.btn svg{width:17px;height:17px;flex:none}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+.btn-light{background:#fff;color:#0c1a33}
+.btn-line-light{color:#fff;border-color:rgba(255,255,255,.35)}
+.btn-line{color:var(--accent);border-color:var(--line)}
+.btn:active,.ib:active,.tab:active{transform:scale(.97)}
+.btns{display:grid;gap:.6rem}
+.textlink{display:inline-flex;align-items:center;gap:.4rem;font-weight:700}
+.textlink svg{width:16px;height:16px;transition:transform .2s}
+
+/* ---------- Pages ---------- */
+main [data-page]{display:none}
+main [data-page].current{display:block;animation:enter .3s cubic-bezier(.2,.8,.2,1)}
+@keyframes enter{from{opacity:.001;transform:translateY(8px)}to{opacity:1;transform:none}}
+.sec{padding-block:3rem}
+.sec + .sec{border-top:1px solid var(--line)}
+.sec.mist{background:var(--mist);border-top:0}
+.sec.mist + .sec{border-top:0}
+.sec-title{font-size:1.65rem;font-weight:700;margin-bottom:1.5rem}
+.sec-title.ruled{display:flex;align-items:center;gap:1rem}
+.over{font-size:.72rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);line-height:1.5}
+
+/* Hero — full bleed */
+.hero{position:relative;overflow:hidden;isolation:isolate;background:var(--navy);color:var(--navy-fg);padding-block:2.75rem 3rem}
+.hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--navy-line) 1px,transparent 1px),linear-gradient(90deg,var(--navy-line) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(165deg,transparent 40%,#000);-webkit-mask-image:linear-gradient(165deg,transparent 40%,#000);opacity:.55}
+.kicker{display:inline-flex;align-items:center;gap:.6rem;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--navy-muted)}
+.kicker::before{content:"";width:22px;height:2px;background:var(--pink)}
+.hero h1{font-size:clamp(1.9rem,8.4vw,2.5rem);font-weight:750;margin:1rem 0 1.25rem}
+.hero h1 span{display:block;color:#b9c0ff;font-weight:600}
+.hero p{color:var(--navy-muted);font-size:1.02rem;max-width:62ch}
+.hero p + p{margin-top:.85rem}
+.hero .btns{margin-top:1.75rem}
+
+/* Contact strip under hero */
+.strip{border-bottom:1px solid var(--line)}
+.strip ul{display:grid}
+.strip li + li{border-top:1px solid var(--line)}
+.strip a,.strip span.it{display:flex;align-items:center;gap:.9rem;padding:1rem 0;color:var(--ink)}
+.strip svg{width:20px;height:20px;color:var(--accent);flex:none}
+.strip small{display:block;font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.strip b{font-weight:600;font-size:1rem;overflow-wrap:anywhere}
+
+/* Product lines index */
+.index{border-top:1px solid var(--ink)}
+.index > li{border-bottom:1px solid var(--line)}
+.index a{display:grid;grid-template-columns:auto 1fr auto;gap:.35rem 1rem;align-items:start;padding:1.35rem 0;color:var(--ink)}
+.index .ico{width:26px;height:26px;color:var(--accent);margin-top:2px}
+.index h3{font-size:1.3rem;font-weight:700}
+.index .chev{width:20px;height:20px;color:var(--accent);margin-top:5px;transition:transform .2s}
+.index ul{grid-column:2/3;display:grid;gap:.3rem;color:var(--muted);font-size:.95rem;line-height:1.45;margin-top:.35rem}
+
+/* Plain icon list */
+.plain > li{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(--line)}
+.plain > li:first-child{border-top:1px solid var(--line)}
+.plain .ico{width:24px;height:24px;color:var(--accent);margin-top:1px}
+.plain b{font-family:var(--font-display);font-weight:600;font-size:1.05rem;line-height:1.4}
+.plain .txt{display:grid;gap:.2rem;min-width:0}
+.plain small{color:var(--muted);font-size:.97rem;line-height:1.5}
+.plain .lbl{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.plain .val{font-size:1.05rem;line-height:1.5;overflow-wrap:anywhere;color:var(--ink)}
+.plain a.val{color:var(--accent);font-weight:600}
+.checks .ico{width:20px;height:20px;margin-top:3px}
+
+/* Navy band */
+.band{position:relative;overflow:hidden;isolation:isolate;background:var(--navy);color:var(--navy-fg);padding-block:3rem}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(var(--navy-line) 1px,transparent 1px),linear-gradient(90deg,var(--navy-line) 1px,transparent 1px);background-size:40px 40px;mask-image:linear-gradient(180deg,#000,transparent 60%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 60%);opacity:.45}
+.band h2{font-size:1.65rem;font-weight:700;margin-bottom:1rem}
+.band p{color:var(--navy-muted);max-width:60ch}
+.band ul{margin-top:1.75rem;border-top:1px solid var(--navy-line)}
+.band li{display:flex;gap:1rem;align-items:center;padding:.95rem 0;border-bottom:1px solid var(--navy-line);font-weight:600}
+.band li svg{width:22px;height:22px;color:#b9c0ff;flex:none}
+.band .btns{margin-top:1.75rem}
+
+/* Statement */
+.statement{border-left:3px solid var(--accent);padding-left:1.25rem;display:grid;gap:.9rem}
+.statement p{font-family:var(--font-display);font-size:1.3rem;font-weight:500;line-height:1.45;letter-spacing:-.01em}
+
+/* CTA band */
+.cta{background:var(--accent);color:var(--accent-ink);padding-block:2.75rem}
+:root[data-theme="dark"] .cta{background:#2f3690;color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cta{background:#2f3690;color:#fff}}
+.cta p{font-family:var(--font-display);font-size:1.4rem;font-weight:600;line-height:1.35;max-width:32ch;margin-bottom:1.5rem}
+
+/* Inner page head */
+.phead{background:var(--mist);padding-block:2.25rem 2.5rem;border-bottom:1px solid var(--line)}
+.phead h1{font-size:clamp(1.85rem,8vw,2.4rem);font-weight:750;margin-bottom:.9rem}
+.phead p{color:var(--muted);font-size:1.05rem;max-width:66ch}
+.vm{display:grid}
+.vm > div{padding-block:1.5rem;border-bottom:1px solid var(--line);display:grid;gap:.6rem}
+.vm > div:first-child{border-top:1px solid var(--ink)}
+.vm p{font-family:var(--font-display);font-size:1.2rem;font-weight:500;line-height:1.45}
+.note{display:flex;gap:.8rem;align-items:flex-start;margin-top:1.75rem;color:var(--muted);font-size:.98rem}
+.note svg{width:20px;height:20px;color:var(--accent);flex:none;margin-top:3px}
+.page-cta{margin-top:2rem}
+
+/* Footer */
+footer.site{background:var(--navy);color:var(--navy-muted);padding-block:2.5rem 1.75rem;font-size:.94rem}
+footer.site .brand{color:var(--navy-fg);margin-bottom:1rem}
+footer.site .brand-sub{color:var(--navy-muted)}
+footer.site p{max-width:44ch}
+footer.site .flinks{display:none}
+footer.site .legal{border-top:1px solid var(--navy-line);margin-top:1.75rem;padding-top:1.2rem;font-size:.82rem}
+
+/* ---------- ≥760px ---------- */
+@media (min-width: 760px){
+  .wrap{--g:max(40px,env(safe-area-inset-left,0px));--gr:max(40px,env(safe-area-inset-right,0px))}
+  .sec,.band{padding-block:4.5rem}
+  .sec-title,.band h2{font-size:2.2rem;margin-bottom:2rem}
+  .hero{padding-block:4.5rem}
+  .hero h1{font-size:3rem}
+  .hero p{font-size:1.12rem}
+  .btns{display:flex;flex-wrap:wrap}
+  .strip ul{grid-template-columns:repeat(3,1fr)}
+  .strip li + li{border-top:0;border-left:1px solid var(--line);padding-left:1.5rem}
+  .strip a,.strip span.it{padding:1.25rem 0}
+  .cols2{display:grid;grid-template-columns:1fr 1fr;column-gap:3rem}
+  .cols2 > li:nth-child(2){border-top:1px solid var(--line)}
+  .index.cols2 > li:nth-child(2){border-top:0}
+  .index.cols2{border-top:0}
+  .index.cols2 > li:nth-child(-n+2){border-top:1px solid var(--ink)}
+  .statement{padding-left:2rem}
+  .statement p{font-size:1.75rem}
+  .cta{padding-block:3.5rem}
+  .cta .wrap{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+  .cta p{font-size:1.75rem;margin:0}
+  .phead{padding-block:3.5rem}
+  .phead h1{font-size:3rem}
+  .phead p{font-size:1.15rem}
+  .vm{grid-template-columns:1fr 1fr;column-gap:3rem}
+  .vm > div:nth-child(2){border-top:1px solid var(--ink)}
+  .band .grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+  .band ul{margin-top:0}
+  footer.site .fcols{display:grid;grid-template-columns:1.3fr 1fr;gap:3rem}
+  footer.site .flinks{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 2rem;align-content:start}
+  footer.site .flinks a{color:var(--navy-muted)}
+}
+
+/* ---------- ≥1000px ---------- */
+@media (min-width: 1000px){
+  .hero .wrap{display:grid;grid-template-columns:1.5fr 1fr;gap:4rem;align-items:end}
+  .hero h1{font-size:3.5rem}
+  .hero .aside{border-left:1px solid var(--navy-line);padding-left:2.5rem;display:grid;gap:1.4rem}
+  .serve{grid-template-columns:repeat(5,1fr);column-gap:0}
+  .serve > li{flex-direction:column;border-top:1px solid var(--ink)!important;border-bottom:0;padding:1.25rem 1.25rem 0 0}
+  .serve > li + li{padding-left:1.25rem;border-left:1px solid var(--line)}
+  .cols3{display:grid;grid-template-columns:repeat(3,1fr);column-gap:3rem}
+  .cols3 > li:nth-child(-n+3){border-top:1px solid var(--line)}
+  .index.cols4{display:grid;grid-template-columns:repeat(4,1fr);column-gap:2rem;border-top:0}
+  .index.cols4 > li{border-top:1px solid var(--ink);border-bottom:0}
+  .index.cols4 a{grid-template-columns:1fr auto;padding-top:1.5rem}
+  .index.cols4 .ico{grid-column:1/-1;margin-bottom:.6rem}
+  .index.cols4 ul{grid-column:1/-1;display:grid;gap:.3rem;margin-top:.6rem}
+  a:hover .chev,a:hover .textlink svg,.textlink:hover svg{transform:translateX(4px)}
+  .btn:hover{filter:brightness(1.07)}
+  footer.site .flinks a:hover{color:#fff}
+}
+.hero .aside{display:none}
+.lead-p{font-family:var(--font-display);font-size:1.15rem;font-weight:500;line-height:1.55;max-width:60ch;border-left:3px solid var(--pink);padding-left:1.1rem}
+.mobile-ops{padding-block:2.25rem;border-bottom:1px solid var(--line)}
+.mobile-ops + .sec{border-top:0}
+@media (min-width: 760px){.lead-p{font-size:1.35rem}}
+@media (min-width: 1000px){.hero .aside{display:grid}.strip,.mobile-ops{display:none}.mobile-ops + .sec{border-top:0}}
+
+/* ---------- ≥1200px: top navigation ---------- */
+@media (min-width: 1200px){
+  body{padding-bottom:0}
+  :root{--bar:76px}
+  .tabbar,.sheet,.scrim{display:none}
+  body.inner .appbar .brand{display:flex}
+  body.inner .appbar .back{display:none}
+  .appbar{background:var(--bg)}
+  .brand svg{width:38px;height:38px}
+  .brand-name{font-size:1.18rem}
+  nav.top{display:flex;align-items:center;gap:.15rem;margin-left:auto;height:100%}
+  nav.top a{display:flex;align-items:center;height:100%;color:var(--ink);font-weight:600;font-size:.93rem;padding:0 .6rem;white-space:nowrap;position:relative}
+  nav.top a:hover{color:var(--accent)}
+  nav.top a[aria-current="page"]{color:var(--accent)}
+  nav.top a[aria-current="page"]::after{content:"";position:absolute;left:.6rem;right:.6rem;bottom:-1px;height:2px;background:var(--accent)}
+  .acts{display:none}
+  .appbar .wrap{max-width:1320px}
+  nav.top a{font-size:.92rem;padding:0 .55rem}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-home" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3.5 10.5L12 4l8.5 6.5V20a1 1 0 0 1-1 1H15v-6H9v6H4.5a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5L12 13l8.5-6.5"/></g></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 21V10l6 3.5V10l6 3.5V5h6v16z"/><path d="M7 17h2M12 17h2M17 17h2"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="M7.5 12.5l3 3 6-6.5"/></g></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="M12 11v6M12 7.5v.01"/></g></symbol>
+    <symbol id="i-bottle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9.5 2.5h5v3h-5z"/><path d="M9 5.5h6l1.5 3.5v11a1 1 0 0 1-1 1h-7a1 1 0 0 1-1-1V9z"/><path d="M7.5 13h9M7.5 17.5h9"/></g></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M12 2.5c3.5 4.5 6.5 8 6.5 11.5a6.5 6.5 0 0 1-13 0c0-3.5 3-7 6.5-11.5z"/><path d="M8.5 15a3.5 3.5 0 0 0 3.5 3.5"/></g></symbol>
+    <symbol id="i-machine" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15.5" rx="1.5"/><rect x="5.5" y="7" width="9" height="10.5" rx=".5"/><path d="M17 7.5h1.5M17 10h1.5"/><circle cx="17.8" cy="15" r="1.2"/></g></symbol>
+    <symbol id="i-ship" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2.5" y="8" width="11" height="9" rx=".5"/><path d="M13.5 11h4l3.5 3.5V17h-7.5z"/><circle cx="6.5" cy="18.5" r="1.8"/><circle cx="17.5" cy="18.5" r="1.8"/></g></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 7.5L12 3l9 4.5v9L12 21l-9-4.5z"/><path d="M3 7.5L12 12l9-4.5M12 12v9"/></g></symbol>
+    <symbol id="i-flask" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M9 3h6M10 3v6L4.5 18.5A1.7 1.7 0 0 0 6 21h12a1.7 1.7 0 0 0 1.5-2.5L14 9V3"/><path d="M7 15h10"/></g></symbol>
+    <symbol id="i-scope" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3l4 2.5-4 7-4-2.5z"/><path d="M12 9.5A6 6 0 0 1 16.5 20H6M4 22h16M8.5 16.5h4.5"/></g></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 21V5l8-2v18M12 8h8v13"/><path d="M7 8h2M7 12h2M7 16h2M15 12h2M15 16h2M2 21h20"/></g></symbol>
+    <symbol id="i-hosp" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M4 21V7l8-4 8 4v14z"/><path d="M12 8v6M9 11h6M10 21v-3.5h4V21"/></g></symbol>
+    <symbol id="i-uni" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11.5v5c3 2.3 9 2.3 12 0v-5M21 9v6"/></g></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20C4 10 10 4.5 20 4c0 10-5.5 16-16 16z"/><path d="M4 20l8.5-8.5"/></g></symbol>
+    <symbol id="i-qc" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6M10.5 3v6L4.5 19a1.2 1.2 0 0 0 1 2h13a1.2 1.2 0 0 0 1-2l-6-10V3"/><path d="M7.5 15h9"/></g></symbol>
+    <symbol id="e-autoclave" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="4.5" y="3" width="15" height="18" rx="1.5"/><circle cx="12" cy="13" r="5"/><circle cx="12" cy="13" r="2.4"/><path d="M7 6h3.5M14.5 6h2.5"/></g></symbol>
+    <symbol id="e-incubator" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3.5" y="3" width="17" height="18" rx="1.5"/><rect x="5.5" y="6" width="10" height="12.5" rx=".5"/><path d="M5.5 10h10M5.5 14.2h10M17.5 7h1.5"/></g></symbol>
+    <symbol id="e-oven" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2.5" y="4.5" width="19" height="15" rx="1.5"/><rect x="4.5" y="7.5" width="11.5" height="9.5" rx=".5"/><path d="M6.5 12c.8-.8 1.5.8 2.3 0s1.5.8 2.3 0 1.5.8 2.3 0M18.5 8v2.5"/></g></symbol>
+    <symbol id="e-laminar" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M2.5 20.5h19M4 20.5V3.5h16v17"/><path d="M4 7h16M7.5 9v2.5M10.5 9v2.5M13.5 9v2.5M16.5 9v2.5M5 15.5h14"/></g></symbol>
+    <symbol id="e-stainer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="2" y="7" width="20" height="11.5" rx="1.5"/><path d="M5 10v5.5M9 10v5.5M13 10v5.5M17 10v5.5M5.5 3.5h13V7"/></g></symbol>
+    <symbol id="e-centrifuge" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M3 10.5h18v9a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5z"/><path d="M3.8 10.5c1.5-4 14.9-4 16.4 0"/><circle cx="12" cy="15.5" r="3"/></g></symbol>
+    <symbol id="e-warmer" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><rect x="3" y="13" width="18" height="7" rx="1.5"/><path d="M6.5 13V5a1.2 1.2 0 0 1 2.4 0v8M10.8 13V5a1.2 1.2 0 0 1 2.4 0v8M15.1 13V5a1.2 1.2 0 0 1 2.4 0v8"/></g></symbol>
+    <symbol id="e-shaker" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"><path d="M5 21h14l-1.5-5.5h-11z"/><path d="M10.8 15.5V5a1.2 1.2 0 0 1 2.4 0v10.5"/><path d="M7.5 6.5c-1.2 1.2-1.2 2.8 0 4M16.5 6.5c1.2 1.2 1.2 2.8 0 4"/></g></symbol>
+    <symbol id="logo" viewBox="0 0 42 42"><rect width="42" height="42" rx="10" fill="#0c1a33"/><path d="M17 9h8M18.5 9v8.5L11 30.5A2.4 2.4 0 0 0 13.1 34h15.8a2.4 2.4 0 0 0 2.1-3.5L23.5 17.5V9" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"/><path d="M13.6 26h14.8l2.6 4.5A2.4 2.4 0 0 1 28.9 34H13.1a2.4 2.4 0 0 1-2.1-3.5z" fill="#5b65e6"/><circle cx="19" cy="29.5" r="1.4" fill="#fff"/><circle cx="23.5" cy="28.5" r="1" fill="#f07aa6"/></symbol>
+  </defs>
+</svg>
+
+<header class="appbar">
+  <div class="wrap">
+    <a class="brand" href="#home" aria-label="MARCO LAB home"><svg aria-hidden="true"><use href="#logo"/></svg><span><span class="brand-name">MARCO LAB</span><span class="brand-sub">(PVT) LTD</span></span></a>
+    <a class="back" href="#home" aria-label="Back"><span class="ib" aria-hidden="true"><svg><use href="#i-back"/></svg></span><span id="page-title"></span></a>
+    <nav class="top" aria-label="Main">
+      <a href="#home" data-link="home">Home</a>
+      <a href="#about" data-link="about">About Us</a>
+      <a href="#reagents" data-link="reagents">Laboratory Reagents</a>
+      <a href="#water" data-link="water">Purified Water</a>
+      <a href="#equipment" data-link="equipment">Laboratory Equipment</a>
+      <a href="#imports" data-link="imports">Imports &amp; Tenders</a>
+      <a href="#support" data-link="support">Technical Support</a>
+      <a href="#contact" data-link="contact">Contact Us</a>
+    </nav>
+    <div class="acts">
+      <a class="ib" href="tel:+94712541829" aria-label="Call +94 71 254 1829"><svg aria-hidden="true"><use href="#i-phone"/></svg></a>
+      <a class="ib" href="mailto:marcolab.lk15@yahoo.com" aria-label="Email marcolab.lk15@yahoo.com"><svg aria-hidden="true"><use href="#i-mail"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- ================= HOME ================= -->
+<div data-page="home">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="kicker">Welcome to MARCO LAB</span>
+        <h1>Reliable Laboratory Reagents, Equipment and Purified Water <span>— Manufactured and Supplied in Sri Lanka</span></h1>
+        <p>MARCO LAB (PVT) LTD is a Sri Lankan manufacturer and supplier of medical laboratory reagents, laboratory equipment, distilled water and highly purified water. Based in Kuruvita, we support hospitals, diagnostic laboratories, universities, research institutions and other scientific facilities with practical laboratory solutions.</p>
+        <div class="btns">
+          <a class="btn btn-light" href="#reagents">Laboratory Reagents <svg aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          <a class="btn btn-line-light" href="#contact">Contact Us</a>
+        </div>
+      </div>
+      <div class="aside">
+        <p>Our operations include local manufacturing, equipment support, importation of medical and laboratory products, and participation in institutional procurement, including tenders conducted through the State Pharmaceuticals Corporation of Sri Lanka (SPC).</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip"><div class="wrap"><ul>
+    <li><a href="tel:+94712541829"><svg aria-hidden="true"><use href="#i-phone"/></svg><span><small>Telephone</small><b>+94 71 254 1829 / +94 75 254 1829</b></span></a></li>
+    <li><a href="mailto:marcolab.lk15@yahoo.com"><svg aria-hidden="true"><use href="#i-mail"/></svg><span><small>Email</small><b>marcolab.lk15@yahoo.com</b></span></a></li>
+    <li><a href="#contact"><svg aria-hidden="true"><use href="#i-pin"/></svg><span><small>Office</small><b>No. 172/A, Ashoka Place, Millawitiya, Kuruvita, Sri Lanka</b></span></a></li>
+  </ul></div></div>
+
+  <section class="sec mobile-ops">
+    <div class="wrap"><p class="lead-p">Our operations include local manufacturing, equipment support, importation of medical and laboratory products, and participation in institutional procurement, including tenders conducted through the State Pharmaceuticals Corporation of Sri Lanka (SPC).</p></div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="over" style="margin-bottom:1.25rem">Medical Laboratory Reagents | Laboratory Equipment | Purified Water | Institutional Supplies</p>
+      <ul class="index cols4">
+        <li><a href="#reagents"><svg class="ico" aria-hidden="true"><use href="#i-bottle"/></svg><h3>Laboratory Reagents</h3><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg>
+          <ul><li>Papanicolaou (PAP) stain</li><li>Periodic Acid–Schiff (PAS) stain</li><li>Hematoxylin reagent</li><li>EA-50 reagent</li><li>Orange G (OG-6) reagent</li><li>Hematoxylin &amp; Eosin (H&amp;E) stain</li></ul></a></li>
+        <li><a href="#water"><svg class="ico" aria-hidden="true"><use href="#i-drop"/></svg><h3>Purified Water</h3><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg>
+          <ul><li>Distilled Water</li><li>Double Distilled Water</li><li>Highly Purified Water</li><li>Laboratory Purified Water</li></ul></a></li>
+        <li><a href="#equipment"><svg class="ico" aria-hidden="true"><use href="#i-machine"/></svg><h3>Laboratory Equipment</h3><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg>
+          <ul><li>Autoclaves</li><li>Incubators</li><li>Hot Air Ovens</li><li>Laminar Flow Cabinets</li><li>Fully Automated Stainers</li><li>Centrifuges</li><li>Tube Warmers</li><li>Tube Shakers</li></ul></a></li>
+        <li><a href="#imports"><svg class="ico" aria-hidden="true"><use href="#i-ship"/></svg><h3>Imports &amp; Tenders</h3><svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg>
+          <ul><li>Medical and laboratory consumables</li><li>Laboratory reagents, chemicals and accessories</li><li>Scientific and medical laboratory equipment</li><li>Government and private institutional supply</li></ul></a></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec mist">
+    <div class="wrap">
+      <h2 class="sec-title">Customers and Applications</h2>
+      <ul class="plain serve cols2">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-hosp"/></svg><b>Government and private hospitals</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-scope"/></svg><b>Diagnostic, cytology and histopathology laboratories</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-uni"/></svg><b>Universities and scientific research institutions</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-leaf"/></svg><b>Agricultural and tissue culture laboratories</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-qc"/></svg><b>Industrial and quality-control laboratories</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <h2 class="sec-title">Why Choose MARCO LAB?</h2>
+      <ul class="plain checks cols3">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Sri Lankan manufacturing capability</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Broad portfolio of reagents, equipment and water products</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Technical knowledge of laboratory processes</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Selected customized equipment solutions</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Applicable installation, maintenance and after-sales assistance</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Experience with institutional supply requirements</b></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap grid">
+      <div>
+        <h2>Imports and Tender Supplies</h2>
+        <p>MARCO LAB imports and supplies laboratory and medical products for Sri Lankan institutional customers. We participate in applicable procurement and tender processes, including those conducted through the State Pharmaceuticals Corporation (SPC).</p>
+        <div class="btns"><a class="btn btn-light" href="#imports">Imports &amp; Tenders <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <ul>
+        <li><svg aria-hidden="true"><use href="#i-box"/></svg>Medical and laboratory consumables</li>
+        <li><svg aria-hidden="true"><use href="#i-flask"/></svg>Laboratory reagents, chemicals and accessories</li>
+        <li><svg aria-hidden="true"><use href="#i-scope"/></svg>Scientific and medical laboratory equipment</li>
+        <li><svg aria-hidden="true"><use href="#i-building"/></svg>Government and private institutional supply</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="statement">
+        <h2 class="sec-title" style="margin:0">Quality Commitment</h2>
+        <p>We aim to maintain appropriate manufacturing practices, monitor relevant product characteristics, provide accurate technical information and improve customer service.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <p>For quotations, product details, bulk orders and technical inquiries, please contact our team.</p>
+      <div class="btns">
+        <a class="btn btn-light" href="tel:+94712541829"><svg aria-hidden="true"><use href="#i-phone"/></svg>Telephone</a>
+        <a class="btn btn-line-light" href="mailto:marcolab.lk15@yahoo.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div data-page="about">
+  <div class="phead"><div class="wrap"><h1>About Us</h1>
+    <p>MARCO LAB (PVT) LTD combines medical laboratory knowledge with manufacturing experience to provide laboratory reagents, scientific equipment and water purification products. We focus on reliable products, responsive service and solutions suited to the practical requirements of laboratories and healthcare institutions.</p></div></div>
+  <section class="sec">
+    <div class="wrap vm">
+      <div><span class="over">Vision</span><p>To become a recognized Sri Lankan manufacturer and supplier of dependable laboratory products for local and international customers.</p></div>
+      <div><span class="over">Mission</span><p>To support healthcare, diagnostics and scientific research through reliable products, technical expertise, continuous improvement and customer-focused service.</p></div>
+    </div>
+  </section>
+  <section class="sec mist">
+    <div class="wrap">
+      <h2 class="sec-title">Core values</h2>
+      <ul class="plain checks cols2">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Product quality and reliability</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Professional integrity and customer service</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Practical innovation and technical support</b></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Responsible manufacturing and continuous improvement</b></li>
+      </ul>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <ul class="plain cols2">
+        <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="txt"><span class="lbl">Registered office</span><span class="val">No. 172/A, Ashoka Place, Millawitiya, Kuruvita, Sri Lanka</span></span></li>
+        <li><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg><span class="txt"><span class="lbl">Factory</span><span class="val">No. 59, Blue Mountain, Ramya Place, Edandawala, Kuruvita, Sri Lanka</span></span></li>
+      </ul>
+    </div>
+  </section>
+</div>
+
+<!-- ================= REAGENTS ================= -->
+<div data-page="reagents">
+  <div class="phead"><div class="wrap"><h1>Medical Laboratory Reagents</h1><p>Our staining reagent range supports histopathology, cytology and other laboratory applications.</p></div></div>
+  <section class="sec"><div class="wrap">
+    <ul class="plain cols2" id="reagent-list"></ul>
+    <p class="note"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Pack sizes, instructions for use, shelf life and product specifications are available on request.</span></p>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Contact Us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div></section>
+</div>
+
+<!-- ================= WATER ================= -->
+<div data-page="water">
+  <div class="phead"><div class="wrap"><h1>Distilled and Purified Water</h1><p>Depending on the product, purification may include reverse osmosis, deionization, UV treatment and filtration.</p></div></div>
+  <section class="sec"><div class="wrap">
+    <ul class="plain cols2" id="water-list"></ul>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Contact Us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div></section>
+</div>
+
+<!-- ================= EQUIPMENT ================= -->
+<div data-page="equipment">
+  <div class="phead"><div class="wrap"><h1>Laboratory Equipment</h1><p>Selected equipment can be configured to customer requirements, subject to technical feasibility.</p></div></div>
+  <section class="sec"><div class="wrap">
+    <ul class="plain cols2" id="equip-list"></ul>
+    <p class="note"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Contact us for models, specifications, quotations and applicable service terms.</span></p>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Contact Us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div></section>
+</div>
+
+<!-- ================= IMPORTS ================= -->
+<div data-page="imports">
+  <div class="phead"><div class="wrap"><h1>Imports and Tender Supplies</h1><p>MARCO LAB imports and supplies laboratory and medical products for Sri Lankan institutional customers. We participate in applicable procurement and tender processes, including those conducted through the State Pharmaceuticals Corporation (SPC).</p></div></div>
+  <section class="sec"><div class="wrap">
+    <ul class="plain cols2">
+      <li><svg class="ico" aria-hidden="true"><use href="#i-box"/></svg><b>Medical and laboratory consumables</b></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-flask"/></svg><b>Laboratory reagents, chemicals and accessories</b></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-scope"/></svg><b>Scientific and medical laboratory equipment</b></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-building"/></svg><b>Government and private institutional supply</b></li>
+    </ul>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Contact Us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div></section>
+</div>
+
+<!-- ================= TECHNICAL SUPPORT ================= -->
+<div data-page="support">
+  <div class="phead"><div class="wrap"><h1>Technical Support</h1><p>Contact us for models, specifications, quotations and applicable service terms.</p></div></div>
+  <section class="sec"><div class="wrap">
+    <ul class="plain checks cols3">
+      <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Technical knowledge of laboratory processes</b></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Selected customized equipment solutions</b></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-check"/></svg><b>Applicable installation, maintenance and after-sales assistance</b></li>
+    </ul>
+    <p class="note"><svg aria-hidden="true"><use href="#i-info"/></svg><span>Selected equipment can be configured to customer requirements, subject to technical feasibility.</span></p>
+    <div class="page-cta"><a class="btn btn-primary" href="#contact">Contact Us <svg aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+  </div></section>
+</div>
+
+<!-- ================= CONTACT ================= -->
+<div data-page="contact">
+  <div class="phead"><div class="wrap"><h1>Contact Us</h1><p>For quotations, product details, bulk orders and technical inquiries, please contact our team.</p></div></div>
+  <section class="sec"><div class="wrap">
+    <ul class="plain cols2">
+      <li><svg class="ico" aria-hidden="true"><use href="#i-phone"/></svg><span class="txt"><span class="lbl">Telephone</span><a class="val" href="tel:+94712541829">+94 71 254 1829</a><a class="val" href="tel:+94752541829">+94 75 254 1829</a></span></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-mail"/></svg><span class="txt"><span class="lbl">Email</span><a class="val" href="mailto:marcolab.lk15@yahoo.com">marcolab.lk15@yahoo.com</a></span></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg><span class="txt"><span class="lbl">Office</span><span class="val">No. 172/A, Ashoka Place, Millawitiya, Kuruvita, Sri Lanka</span></span></li>
+      <li><svg class="ico" aria-hidden="true"><use href="#i-factory"/></svg><span class="txt"><span class="lbl">Factory</span><span class="val">No. 59, Blue Mountain, Ramya Place, Edandawala, Kuruvita, Sri Lanka</span></span></li>
+    </ul>
+    <div class="page-cta btns">
+      <a class="btn btn-primary" href="tel:+94712541829"><svg aria-hidden="true"><use href="#i-phone"/></svg>Telephone</a>
+      <a class="btn btn-line" href="mailto:marcolab.lk15@yahoo.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+    </div>
+  </div></section>
+</div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="fcols">
+      <div>
+        <a class="brand" href="#home" aria-label="MARCO LAB home"><svg aria-hidden="true"><use href="#logo"/></svg><span><span class="brand-name">MARCO LAB</span><span class="brand-sub">(PVT) LTD</span></span></a>
+        <p>Manufacture and supply of medical laboratory reagents, laboratory water and laboratory equipment; importation and institutional tender supplies</p>
+      </div>
+      <div class="flinks">
+        <a href="#home">Home</a><a href="#about">About Us</a>
+        <a href="#reagents">Laboratory Reagents</a><a href="#water">Purified Water</a>
+        <a href="#equipment">Laboratory Equipment</a><a href="#imports">Imports &amp; Tenders</a>
+        <a href="#support">Technical Support</a><a href="#contact">Contact Us</a>
+      </div>
+    </div>
+    <div class="legal">© 2026 MARCO LAB (PVT) LTD. All rights reserved. | Kuruvita, Sri Lanka | marcolab.lk15@yahoo.com</div>
+  </div>
+</footer>
+
+<nav class="tabbar" aria-label="Main">
+  <div class="tabs">
+    <a class="tab" href="#home" data-tab="home"><svg aria-hidden="true"><use href="#i-home"/></svg>Home</a>
+    <a class="tab" href="#reagents" data-tab="reagents"><svg aria-hidden="true"><use href="#i-bottle"/></svg>Laboratory Reagents</a>
+    <a class="tab" href="#water" data-tab="water"><svg aria-hidden="true"><use href="#i-drop"/></svg>Purified Water</a>
+    <a class="tab" href="#equipment" data-tab="equipment"><svg aria-hidden="true"><use href="#i-machine"/></svg>Laboratory Equipment</a>
+    <button class="tab" type="button" id="menu-btn" aria-label="Menu" aria-expanded="false" aria-controls="sheet"><svg aria-hidden="true"><use href="#i-menu"/></svg></button>
+  </div>
+</nav>
+
+<div class="scrim" id="scrim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="handle"></div>
+  <div class="sheet-head">
+    <span class="brand"><svg aria-hidden="true"><use href="#logo"/></svg><span><span class="brand-name">MARCO LAB</span><span class="brand-sub">(PVT) LTD</span></span></span>
+    <button class="ib" type="button" id="sheet-close" aria-label="Close"><svg aria-hidden="true"><use href="#i-x"/></svg></button>
+  </div>
+  <nav>
+    <a href="#home" data-link="home">Home<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+    <a href="#about" data-link="about">About Us<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+    <a href="#reagents" data-link="reagents">Laboratory Reagents<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+    <a href="#water" data-link="water">Purified Water<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+    <a href="#equipment" data-link="equipment">Laboratory Equipment<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+    <a href="#imports" data-link="imports">Imports &amp; Tenders<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+    <a href="#support" data-link="support">Technical Support<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+    <a href="#contact" data-link="contact">Contact Us<svg class="chev" aria-hidden="true"><use href="#i-chev"/></svg></a>
+  </nav>
+  <div class="two">
+    <a class="btn btn-primary" href="tel:+94712541829"><svg aria-hidden="true"><use href="#i-phone"/></svg>Telephone</a>
+    <a class="btn btn-line" href="mailto:marcolab.lk15@yahoo.com"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  var reagents=[
+    ["Papanicolaou (PAP) stain","Reagents for cytological staining procedures."],
+    ["Periodic Acid–Schiff (PAS) stain","Histochemical reagents for demonstrating relevant tissue components."],
+    ["Hematoxylin reagent","Nuclear staining reagent for laboratory microscopy."],
+    ["EA-50 reagent","Eosin Azure reagent used in Papanicolaou staining."],
+    ["Orange G (OG-6) reagent","Staining component used in Papanicolaou methods."],
+    ["Hematoxylin & Eosin (H&E) stain","Reagents for routine histological tissue staining."]
+  ];
+  var water=["Distilled Water","Double Distilled Water","Highly Purified Water","Laboratory Purified Water"];
+  var equip=[
+    ["autoclave","Autoclaves","Steam sterilization equipment."],
+    ["incubator","Incubators","Controlled-temperature laboratory equipment."],
+    ["oven","Hot Air Ovens","Equipment for laboratory drying and heating."],
+    ["laminar","Laminar Flow Cabinets","Clean-air workstations for appropriate applications."],
+    ["stainer","Fully Automated Stainers","Automated laboratory staining systems."],
+    ["centrifuge","Centrifuges","Sample separation equipment."],
+    ["warmer","Tube Warmers","Temperature-controlled tube warming devices."],
+    ["shaker","Tube Shakers","Laboratory tube mixing equipment."]
+  ];
+  function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+  function li(icon,name,desc){return '<li><svg class="ico" aria-hidden="true"><use href="#'+icon+'"/></svg><span class="txt"><b>'+esc(name)+'</b>'+(desc?'<small>'+desc+'</small>':'')+'</span></li>'}
+  document.getElementById("reagent-list").innerHTML=reagents.map(function(r){return li("i-bottle",r[0],r[1])}).join("");
+  document.getElementById("water-list").innerHTML=water.map(function(w){return li("i-drop",w)}).join("");
+  document.getElementById("equip-list").innerHTML=equip.map(function(e){return li("e-"+e[0],e[1],e[2])}).join("");
+
+  var body=document.body,menuBtn=document.getElementById("menu-btn"),sheet=document.getElementById("sheet");
+  function openSheet(){body.classList.add("sheet-open");menuBtn.setAttribute("aria-expanded","true")}
+  function closeSheet(){body.classList.remove("sheet-open");menuBtn.setAttribute("aria-expanded","false")}
+  menuBtn.addEventListener("click",openSheet);
+  document.getElementById("scrim").addEventListener("click",closeSheet);
+  document.getElementById("sheet-close").addEventListener("click",closeSheet);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeSheet()});
+  var y0=null;
+  sheet.addEventListener("touchstart",function(e){if(sheet.scrollTop<=0)y0=e.touches[0].clientY},{passive:true});
+  sheet.addEventListener("touchend",function(e){if(y0!==null&&e.changedTouches[0].clientY-y0>70)closeSheet();y0=null},{passive:true});
+
+  var titles={home:"Home",about:"About Us",reagents:"Laboratory Reagents",water:"Purified Water",equipment:"Laboratory Equipment",imports:"Imports & Tenders",support:"Technical Support",contact:"Contact Us"};
+  var tabbed={home:1,reagents:1,water:1,equipment:1};
+  function route(){
+    var h=(location.hash||"#home").slice(1);if(!titles[h])h="home";
+    document.querySelectorAll("[data-page]").forEach(function(p){p.classList.toggle("current",p.getAttribute("data-page")===h)});
+    document.querySelectorAll("[data-link]").forEach(function(a){if(a.getAttribute("data-link")===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+    document.querySelectorAll("[data-tab]").forEach(function(a){if(a.getAttribute("data-tab")===h)a.setAttribute("aria-current","page");else a.removeAttribute("aria-current")});
+    if(!tabbed[h])menuBtn.setAttribute("aria-current","page");else menuBtn.removeAttribute("aria-current");
+    body.classList.toggle("inner",h!=="home");
+    document.getElementById("page-title").textContent=titles[h];
+    closeSheet();window.scrollTo(0,0);
+  }
+  window.addEventListener("hashchange",route);
+  route();
+})();
+</script>
+
+</body>
+</html>
